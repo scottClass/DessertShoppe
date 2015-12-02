@@ -3,19 +3,29 @@
  * 
  * IceCream has a name, and a cost associated with it.
  * 
- * @author YOURNAMEHERE
+ * @author Scott
  */
-public class IceCream {
-
+public class IceCream extends DessertItem {
+    
+    private String name;
+    private int cost;
+    
     public IceCream(String name, int cost)
     {
-        
+        this.name = name;
+        this.cost = cost;
     }
 
   
+    @Override
     public String toString()
     {
-     return "";
+     return name;
+    }
+
+    @Override
+    public int getCost() {
+        return cost;
     }
     
 }

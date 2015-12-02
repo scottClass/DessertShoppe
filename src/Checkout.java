@@ -5,7 +5,7 @@
  * 
  * DO NOT MODIFY THIS FILE
  * 
- * @author lamonta
+ * @author Scott
  */
 
 
@@ -54,6 +54,7 @@ public class Checkout {
      * Creates a formatted receipt from the till
      * @return a formatted receipt with all items, prices, and taxes listed
      */
+    @Override
     public String toString()
     {
         // create the receipt header
