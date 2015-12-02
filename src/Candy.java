@@ -10,8 +10,9 @@ public class Candy extends DessertItem{
     private String name;
     private double weight;
     private int pricePerLbs;
-
-
+    
+    private DessertShoppe d = new DessertShoppe(); 
+    
     public Candy(String name, double weight, int pricePerLbs)
     {
         this.name = name;
@@ -24,7 +25,9 @@ public class Candy extends DessertItem{
     @Override
     public String toString()
     {
-       return name;
+        
+        String totalCost = d.cents2dollarsAndCents((int)weight*pricePerLbs);
+        return name + "   " + totalCost;
     }
 
     @Override

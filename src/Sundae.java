@@ -18,7 +18,7 @@ public class Sundae extends IceCream {
     private int toppingCost;
     private int totalCost;
     
-    DessertShoppe d = new DessertShoppe();
+    private DessertShoppe d = new DessertShoppe();
     
     public Sundae(String icName, int icCost, String toppingName, int toppingCost)
     {

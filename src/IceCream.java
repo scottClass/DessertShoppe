@@ -10,6 +10,8 @@ public class IceCream extends DessertItem {
     private String name;
     private int cost;
     
+    private DessertShoppe d = new DessertShoppe();
+    
     public IceCream(String name, int cost)
     {
         this.name = name;
@@ -20,7 +22,8 @@ public class IceCream extends DessertItem {
     @Override
     public String toString()
     {
-     return name;
+        String totalCost = d.cents2dollarsAndCents(cost);
+        return name + "   " + totalCost;
     }
 
     @Override

@@ -12,6 +12,8 @@ public class Cookie extends DessertItem{
     private int number;
     private int pricePer12;
     
+    private DessertShoppe d = new DessertShoppe();
+    
     public Cookie(String name, int number, int pricePer12)
     {
         this.name = name;
@@ -23,7 +25,8 @@ public class Cookie extends DessertItem{
     @Override
     public String toString()
     {
-        return name;
+        String totalCost = d.cents2dollarsAndCents(number * pricePer12);
+        return name + "   " + totalCost;
     }
 
     @Override
