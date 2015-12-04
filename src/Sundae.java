@@ -18,7 +18,6 @@ public class Sundae extends IceCream {
     private int toppingCost;
     private int totalCost;
     
-    private DessertShoppe d = new DessertShoppe();
     
     public Sundae(String icName, int icCost, String toppingName, int toppingCost)
     {
@@ -35,7 +34,8 @@ public class Sundae extends IceCream {
     @Override
     public String toString()
     {
-        String cost = d.cents2dollarsAndCents(totalCost);
+        //getting the cost in dollars to print out
+        String cost = DessertShoppe.cents2dollarsAndCents(totalCost);
         return toppingName + " sundae with \n" + icName + "   " + cost;
     }
 

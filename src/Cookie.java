@@ -11,27 +11,30 @@ public class Cookie extends DessertItem{
     private String name;
     private int number;
     private int pricePer12;
-    
-    private DessertShoppe d = new DessertShoppe();
+    private int totalPrice;
     
     public Cookie(String name, int number, int pricePer12)
     {
         this.name = name;
         this.number = number;
         this.pricePer12 = pricePer12;
+        int thing = 12 / number;
+        totalPrice =  pricePer12 / thing;
     }
 
     
     @Override
     public String toString()
     {
-        String totalCost = d.cents2dollarsAndCents(number * pricePer12);
-        return name + "   " + totalCost;
+        //getting the cost in dollars to print out
+        String totalCost = DessertShoppe.cents2dollarsAndCents(totalPrice);
+        String dozenCost = DessertShoppe.cents2dollarsAndCents(pricePer12);
+        return number + " @ " + dozenCost + " /dz \n" + name + "   " + totalCost;
     }
 
     @Override
     public int getCost() {
-        return number * pricePer12;
+        return totalPrice;
     }
     
 }

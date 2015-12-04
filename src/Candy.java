@@ -11,7 +11,6 @@ public class Candy extends DessertItem{
     private double weight;
     private int pricePerLbs;
     
-    private DessertShoppe d = new DessertShoppe(); 
     
     public Candy(String name, double weight, int pricePerLbs)
     {
@@ -25,13 +24,15 @@ public class Candy extends DessertItem{
     @Override
     public String toString()
     {
-        
-        String totalCost = d.cents2dollarsAndCents((int)weight*pricePerLbs);
-        return name + "   " + totalCost;
+        //getting the cost in dollars to print out
+        String totalCost = DessertShoppe.cents2dollarsAndCents((int)(weight * pricePerLbs));
+        String poundPrice = DessertShoppe.cents2dollarsAndCents(pricePerLbs);
+        return weight + "lbs @ " + poundPrice + "/lb. \n"
+                + name + "   " + totalCost;
     }
 
     @Override
     public int getCost() {
-        return (int)weight*pricePerLbs;
+        return (int)(weight * pricePerLbs);
     }
 }
